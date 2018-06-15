@@ -230,7 +230,9 @@ public class Diagnostic extends CordovaPlugin{
                 callbackContext.success();
             } else if(action.equals("isDataRoamingEnabled")) {
                 callbackContext.success(isDataRoamingEnabled() ? 1 : 0);
-            } else if(action.equals("getPermissionAuthorizationStatus")) {
+            } else if(action.equals("isTimeAutomaticEnabled")) {
+                callbackContext.success(isTimeAutomaticEnabled() ? 1 : 0);
+            }else if(action.equals("getPermissionAuthorizationStatus")) {
                 this.getPermissionAuthorizationStatus(args);
             } else if(action.equals("getPermissionsAuthorizationStatus")) {
                 this.getPermissionsAuthorizationStatus(args);
