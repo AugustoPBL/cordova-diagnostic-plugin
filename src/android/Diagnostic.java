@@ -276,6 +276,20 @@ public class Diagnostic extends CordovaPlugin{
         }
         return result;
     }
+       
+ 
+    //Editado
+    public boolean isTimeAutomaticEnabled() throws Exception {
+        boolean result;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            
+            result = Settings.System.getInt(this.cordova.getActivity().getContentResolver(), Settings.Global.AUTO_TIME, 0) == 1;
+        }else{
+            result = Settings.Global.getInt(this.cordova.getActivity().getContentResolver(), Settings.Global.AUTO_TIME, 0) == 1;
+        }
+        return result;
+    }   
+    //Editado       
 
     public void switchToAppSettings() {
         logDebug("Switch to App Settings");
