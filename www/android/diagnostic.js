@@ -433,6 +433,15 @@ var Diagnostic = (function(){
             'isDataRoamingEnabled',
             []);
     };
+    
+    
+    Diagnostic.isTimeAutomaticEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isTimeAutomaticEnabled',
+            []);
+    };      
 
     /************
      * Location *
